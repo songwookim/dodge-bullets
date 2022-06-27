@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
        this.gameObject.SetActive(false);
+
+        // Scene에 존재하는 GameManager 타입의 Obj찾아서 가져오기
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        // 가져온 GameManager Obj의 EndGame() 메서드 실행
+        gameManager.EndGame();
     }
 
     // Start와 Update는 유니티가 전체로 메시지 보낼 때 Game Obj가 같은 이름의 메소드를 갖고 있으면 실행되는 방식임
